@@ -3,14 +3,14 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Registro | Banca Nueva</title>
-        <link rel="stylesheet" href="stylesregistro.css">
+        <title>Registro | Banca 360</title>
+        <link rel="stylesheet" href="/Styles/stylesregistro.css">
     </head>
     <body>
         <div class="register-container">
             <div class="register-box">
                 <div class="logo">
-                    <h2>Banca<span> Nueva</span></h2>
+                    <h2>Banca<span> 360</span></h2>
                 </div>
                 <p class="welcome-text">Regístrate para crear tu cuenta.</p>
                 <form action="#">
@@ -82,56 +82,8 @@
         </div>
         </div>
 
-        <!-- Script para manejar el registro y almacenamiento de datos -->
-        <script>
-            const registroForm = document.querySelector('.register-box form');
-            const preguntasForm = document.getElementById('security-questions-form');
-            const modal = document.getElementById('security-questions-modal');
-
-            // Validación y mostrar modal
-            registroForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                const password = document.getElementById('password').value;
-                const confirm = document.getElementById('confirm-password').value;
-                if (password.length < 6) {
-                    alert('La contraseña debe tener al menos 6 caracteres.');
-                    return;
-                }
-                if (password !== confirm) {
-                    alert('Las contraseñas no coinciden.');
-                    return;
-                }
-                // Mostrar modal de preguntas
-                modal.style.display = 'flex';
-            });
-
-            // Guardar datos y redirigir
-            preguntasForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                // Datos principales
-                const userData = {
-                    fullname: document.getElementById('fullname').value,
-                    username: document.getElementById('username').value,
-                    email: document.getElementById('email').value,
-                    phone: document.getElementById('phone').value,
-                    password: document.getElementById('password').value,
-                    questions: []
-                };
-                // Preguntas y respuestas
-                const selects = preguntasForm.querySelectorAll('select');
-                const inputs = preguntasForm.querySelectorAll('input[type="text"]');
-                for (let i = 0; i < 3; i++) {
-                    userData.questions.push({
-                        question: selects[i].value,
-                        answer: inputs[i].value
-                    });
-                }
-                // Guardar en localStorage (por username)
-                localStorage.setItem('user_' + userData.username, JSON.stringify(userData));
-                // Redirigir a Iniciosesion.html
-                window.location.href = 'Iniciosesion.html';
-            });
-        </script>
+        <!-- Script externo para manejar el registro y almacenamiento de datos -->
+        <script src="/Scripts/Scriptregistro.js"></script>
         
     </body>
 </html>

@@ -3,28 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Cuenta | Banca Nueva</title>
-    <link rel="stylesheet" href="dashboard.css">
+    <title>Mi Cuenta | Banca 360</title>
+    <link rel="stylesheet" href="/Styles/dashboard.css">
 </head>
+    <script src="Scripts/Scriptdashboard.js"></script>
+    <script src="Scripts/Scriptterceros.js"></script>
+    <script src="Scripts/Scriptotrosbancos.js"></script>
 <body>
-    <div class="dashboard-container">
         <header class="top-bar">
-            <div class="logo-small">Banca<span>Nueva</span></div>
+            <div class="logo-small">Banca<span> 360</span></div>
             <button class="logout-btn">Cerrar Sesión</button>
         </header>
-
+        
         <main class="content">
             <section class="balance-card">
                 <p class="balance-label">Saldo Disponible</p>
-                <h1 class="balance-amount">$ 12,450.00</h1>
-                <p class="account-number">Cuenta Corriente **** 4589</p>
+                <h1 class="balance-amount"></h1>
+                <p class="account-number"></p>
             </section>
 
             <h3 class="section-title">Operaciones</h3>
             <div class="actions-grid">
-                <button class="action-card">
+                <button class="action-card" id="transferencias-btn">
                     <span>Transferencias</span>
                 </button>
+                <div id="transferencias-menu" style="display:none; position:absolute; background:#fff; border:1px solid #ccc; z-index:1000;">
+                    <button id="cuentas-terceros-btn" style="width:100%; border:none; background:none; padding:10px; text-align:left;">Cuentas de Terceros</button>
+                    <button id="cuentas-otros-bancos-btn" style="width:100%; border:none; background:none; padding:10px; text-align:left;">Cuentas de otros bancos</button>
+                </div>
                 
                 <button class="action-card">
                     <span>Pago Móvil</span>
