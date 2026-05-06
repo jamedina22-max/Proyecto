@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	const accountNumberElem = document.querySelector('.account-number');
 	const balanceElem = document.querySelector('.balance-amount');
 	const currentUser = localStorage.getItem('currentUser');
+	const profileBtn = document.getElementById('profileBtn');
 	if (currentUser) {
 		const userData = JSON.parse(localStorage.getItem('user_' + currentUser));
 		if (userData) {
@@ -20,4 +21,8 @@ document.addEventListener('DOMContentLoaded', function() {
 			}
 		}
 	}
+	profileBtn.addEventListener('click', function () {
+        window.location.href = 'perfil.html';
+    });
 });
+

@@ -48,7 +48,7 @@ body {
     color: #1342cf;
 }
 
-.logout-btn {
+.profileBtn {
     padding: 8px 14px;
     background-color: #f8f9fa;
     color: #640bd7;
@@ -57,12 +57,16 @@ body {
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s;
+    text-decoration: none;
 }
 
-.logout-btn:hover {
+.profileBtn:hover {
     background-color: #ffe5e5;
     color: #d70b0b;
     border-color: #d70b0b;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(100, 11, 215, 0.1);
+    
 }
 
 /* Tarjeta de Saldo */
