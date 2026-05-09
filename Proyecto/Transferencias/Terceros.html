@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transferencia a Terceros | Banca 360</title>
+    <link rel="stylesheet" href="../Styles/transferencias.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <header class="top-bar">
+            <div class="logo-small">Banca<span> 360</span></div>
+        </header>
+        <main class="content">
+            <h2>Transferencia a Cuentas de Terceros</h2>
+            <form id="form-terceros" autocomplete="off">
+
+                <div class="input-group">
+                    <label for="cuenta-debitar"></label>
+                    <select id="cuenta-debitar" required></select>   
+                </div>
+                <div class="input-group">
+                    <label for="cuenta-destino"></label>
+                    <input type="text" id="cuenta-destino" placeholder="Cuenta Destino:" maxlength="8" required pattern="\d{8}">
+                </div>
+                <div class="input-group">
+                    <label for="monto"></label>
+                    <input type="number" id="monto" placeholder="Monto:" min="0.01" step="0.01" required>
+                </div>
+                <div class="input-group">
+                    <label for="concepto"></label>
+                    <input type="text" id="concepto" placeholder="Concepto:" required>
+                </div>
+                <div class="input-group" style="color:red; margin-bottom:10px;">
+                    <span id="saldo-error"></span>
+                </div>
+                <div class="input-group" style="display:flex; gap:10px;">
+                    <button id="limpiar-btn">Limpiar</button>
+                    <button id="transferir-btn">Transferir</button>
+                    <button id="regresar-btn" type="button">Regresar</button>
+                </div>
+            </form>
+        </main>
+    </div>
+    <script src="../Scripts/Scriptterceros.js"></script>
+</body>
+</html>

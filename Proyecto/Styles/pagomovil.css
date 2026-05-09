@@ -1,0 +1,16 @@
+.input-flex-center-gap {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+.input-flex-gap {
+	display: flex;
+	gap: 10px;
+}
+.ml-10 {
+	margin-left: 10px;
+}
+.error-msg {
+	color: red;
+	margin-bottom: 10px;
+}

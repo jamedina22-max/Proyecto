@@ -1,0 +1,74 @@
+// Script para Realizar Pago Móvil
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('form-pagomovil');
+    const limpiarBtn = document.getElementById('limpiar-btn');
+    const transferirBtn = document.getElementById('transferir-btn');
+    const montoInput = document.getElementById('monto');
+    const saldoError = document.getElementById('saldo-error');
+    const regresarBtn = document.getElementById('regresar-btn');
+    const currentUser = localStorage.getItem('currentUser');
+
+    // Limpiar formulario
+    limpiarBtn.onclick = function(e) {
+        e.preventDefault();
+        form.reset();
+        saldoError.textContent = '';
+    };
+
+    // Transferir
+    transferirBtn.onclick = function(e) {
+        e.preventDefault();
+        saldoError.textContent = '';
+        // Validar que todos los campos estén llenos
+        const campos = [
+            document.getElementById('banco').value,
+            document.getElementById('numero').value.trim(),
+            document.getElementById('tipo').value,
+            document.getElementById('documento').value.trim(),
+            montoInput.value.trim(),
+            document.getElementById('concepto').value.trim()
+        ];
+        if (campos.some(v => !v)) {
+            saldoError.textContent = 'Debe completar todos los campos';
+            return;
+        }
+        // Validar monto: solo números positivos, máximo dos decimales
+        let montoStr = montoInput.value.replace(',', '.').trim();
+        if (!/^(?!0+(?:\.0+)?$)\d+(?:[\.,]\d{1,2})?$/.test(montoStr)) {
+            saldoError.textContent = 'Monto inválido';
+            return;
+        }
+        const monto = parseFloat(montoStr);
+        if (isNaN(monto) || monto <= 0) {
+            saldoError.textContent = 'Monto inválido';
+            return;
+        }
+        if (currentUser) {
+            const userKey = 'user_' + currentUser;
+            const userData = JSON.parse(localStorage.getItem(userKey));
+            if (userData.saldo < monto) {
+                saldoError.textContent = 'Saldo insuficiente';
+                return;
+            }
+            userData.saldo = +(userData.saldo - monto).toFixed(2);
+            // Registrar transacción de pago móvil
+            if (!Array.isArray(userData.transacciones)) userData.transacciones = [];
+            userData.transacciones.push({
+                fecha: new Date().toLocaleString('es-VE'),
+                tipo: 'Pago Móvil',
+                monto: monto,
+                descripcion: `${document.getElementById('numero').value.trim()} (${document.getElementById('banco').value}) - ${document.getElementById('concepto').value.trim()}`
+            });
+            localStorage.setItem(userKey, JSON.stringify(userData));
+            form.reset();
+            saldoError.textContent = 'Transferencia realizada con éxito';
+        }
+    };
+
+    // Regresar
+    regresarBtn.onclick = function(e) {
+        e.preventDefault();
+        window.location.href = '../Pantallainicial.html';
+    };
+});
+

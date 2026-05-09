@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Cuenta | Banca 360</title>
+    <link rel="stylesheet" href="/Styles/dashboard.css">
+</head>
+<body>
+    <div class="sesion-container">
+        <div class="sesion-box">
+        <header class="top-bar">
+            <div class="logo-small">Banca<span> 360</span></div>
+    <nav class="navbar">
+    
+        <div class="nav-actions">
+            <a href="perfil.html" class="profileBtn">
+                Mi Perfil
+            </a>
+        </div>
+    </nav>
+        </header>
+        
+        <main class="content">
+            <section class="balance-card">
+                <p class="balance-label">Saldo Disponible</p>
+                <div class="balance-row center-flex gap-10">
+                    <h1 class="balance-amount no-margin"></h1>
+                    <button id="toggle-saldo-btn" class="toggle-saldo-btn">
+                        <img id="icono-saldo" src="Assets/ocultaroscuro.png" alt="Mostrar/Ocultar saldo" class="icono-saldo" />
+                    </button>
+                </div>
+                <p class="account-number"></p>
+            </section>
+
+            <h3 class="section-title">Operaciones</h3>
+            <div class="actions-grid">
+                <button class="action-card" id="transferencias-btn">
+                    <span>Transferencias</span>
+                </button>
+                <div id="transferencias-menu" class="transferencias-menu">
+                    <button id="cuentas-terceros-btn" class="menu-btn">Cuentas de Terceros</button>
+                    <button id="cuentas-otros-bancos-btn" class="menu-btn">Cuentas de otros bancos</button>
+                </div>
+                
+                <button class="action-card" id="pagomovil-btn">
+                    <span>Pago Móvil</span>
+                </button>
+                
+                <button class="action-card" id="depositos-btn">
+                    <span>Depósitos</span>
+                </button>
+                
+                <button class="action-card" id="movimientos-btn">
+                    <span>Movimientos</span>
+                </button>
+            </div>
+            <!-- Tabla de últimas 3 transacciones -->
+            <section class="ultimas-transacciones-section">
+                <h3 class="section-title">Últimas transacciones</h3>
+                <table id="ultimas-transacciones" class="ultimas-transacciones-table">
+                    <thead class="ultimas-transacciones-thead">
+                        <tr>
+                            <th class="th-padding">Fecha</th>
+                            <th class="th-padding">Tipo</th>
+                            <th class="th-padding">Monto</th>
+                            <th class="th-padding">Descripción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Se llenará por JS -->
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+    <script src="Scripts/Scriptdashboard.js"></script>
+    <script src="Scripts/Scriptterceros.js"></script>
+    <script src="Scripts/Scriptotrosbancos.js"></script>
+</body>
+</html>
