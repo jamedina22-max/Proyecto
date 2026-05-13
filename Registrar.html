@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Registro | Banca 360</title>
+        <link rel="stylesheet" href="/Styles/stylesregistro.css">
+        <link rel="stylesheet" href="Styles/modo.css">
+    </head>
+    <body>
+        <button id="btn-modo">
+            <img src="Assets/modoclaro.png" alt="Modo">
+        </button>
+        <div class="register-container">
+            <div class="register-box">
+                <div class="logo">
+                    <h2>Banca<span> 360</span></h2>
+                </div>
+                <p class="welcome-text">Regístrate para crear tu cuenta.</p>
+                <form action="#">
+                    <div class="input-group">
+                        <label for="fullname">Nombre completo</label>
+                        <input type="text" id="fullname" placeholder="Ingresa tu nombre completo" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="username">Usuario</label>
+                        <input type="text" id="username" placeholder="Elige un nombre de usuario" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="email">Correo electrónico</label>
+                        <input type="email" id="email" placeholder="Ingresa tu correo electrónico" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="phone">Número de teléfono</label>
+                        <input type="tel" id="phone" placeholder="Ingresa tu número de teléfono" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="cedula">Cédula</label>
+                        <input type="number" id="cedula" placeholder="Ingresa tu cédula" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="password">Contraseña</label>
+                        <div class="password-container">
+                            <input type="password" id="password" placeholder="••••••••" required minlength="6">
+                            <button id="toggle-password-reg" class="toggle-password-btn">
+                                <img id="icono-password-reg" src="Assets/ocultaroscuro.png" alt="Mostrar/Ocultar contraseña" class="icono-password" />
+                            </button>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label for="confirm-password">Confirmar contraseña</label>
+                        <div class="password-container">
+                            <input type="password" id="confirm-password" placeholder="••••••••" required>
+                            <button id="toggle-confirm-password-reg" class="toggle-password-btn">
+                                <img id="icono-confirm-password-reg" src="Assets/ocultaroscuro.png" alt="Mostrar/Ocultar contraseña" class="icono-password" />
+                            </button>
+                        </div>
+                    </div>
+                    <button type="submit" class="register-btn">Crear cuenta</button>
+                </form>
+            </div>
+        </div>
+        <!-- Cuadro oculto para preguntas de seguridad -->
+        <div id="security-questions-modal">
+        <div class="modal-content">
+            <h3>Crear Preguntas de seguridad</h3>
+            <form id="security-questions-form">
+            <div>
+                <label>Pregunta 1</label>
+                <select required>
+                <option value="">Selecciona una pregunta</option>
+                <option>¿Cuál es el nombre de tu primera mascota?</option>
+                <option>¿En qué ciudad naciste?</option>
+                <option>¿Cuál es tu comida favorita?</option>
+                </select>
+                <input type="text" placeholder="Respuesta" required>
+            </div>
+            <div>
+                <label>Pregunta 2</label>
+                <select required>
+                <option value="">Selecciona una pregunta</option>
+                <option>¿Cuál es el nombre de tu mejor amigo de la infancia?</option>
+                <option>¿Cuál es tu color favorito?</option>
+                <option>¿Cómo se llama tu madre?</option>
+                </select>
+                <input type="text" placeholder="Respuesta" required>
+            </div>
+            <div>
+                <label>Pregunta 3</label>
+                <select required>
+                <option value="">Selecciona una pregunta</option>
+                <option>¿Cuál es tu película favorita?</option>
+                <option>¿Cuál es el nombre de tu primer colegio?</option>
+                <option>¿Cómo se llama tu padre?</option>
+                </select>
+                <input type="text" placeholder="Respuesta" required>
+            </div>
+            <button type="submit">Guardar respuestas</button>
+            </form>
+        </div>
+        </div>
+
+        <!-- Script externo para manejar el registro y almacenamiento de datos -->
+        <script src="/Scripts/Scriptregistro.js"></script>
+        <script src="Scripts/script-modo.js"></script>
+    </body>
+</html>

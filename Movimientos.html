@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movimientos</title>
+    <link rel="stylesheet" href="Styles/dashboard.css">
+    <link rel="stylesheet" href="Styles/modo.css">
+</head>
+<body>
+    <button id="btn-modo">
+        <img src="Assets/modoclaro.png" alt="Modo">
+    </button>
+    <div class="sesion-container">
+        <div class="sesion-box">
+            <h2>Movimientos</h2>
+            <div class="filtro">
+                <label for="tipo">Tipo:</label>
+                <select id="tipo">
+                    <option value="todos">Todos</option>
+                    <option value="entradas">Entradas</option>
+                    <option value="salidas">Salidas</option>
+                </select>
+            </div>
+            <table id="tabla-movimientos" class="ultimas-transacciones-table">
+                <thead class="ultimas-transacciones-thead">
+                    <tr>
+                        <th class="th-padding">Fecha</th>
+                        <th class="th-padding">Tipo</th>
+                        <th class="th-padding">Monto</th>
+                        <th class="th-padding">Descripción</th>
+                        <th class="th-padding">Referencia</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Se llenará por JS -->
+                </tbody>
+            </table>
+            <button onclick="window.location.href='Pantallainicial.html'" class="action-card volver-btn">Volver</button>
+        </div>
+    </div>
+    <script src="Scripts/Scriptmovimientos.js"></script>
+    <script src="Scripts/script-modo.js"></script>
+</body>
+</html>

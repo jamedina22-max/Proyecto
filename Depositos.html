@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Depósitos | Banca 360</title>
+    <link rel="stylesheet" href="Styles/pagomovil.css">
+    <link rel="stylesheet" href="Styles/modo.css">
+</head>
+<body>
+    <button id="btn-modo">
+        <img src="Assets/modoclaro.png" alt="Modo">
+    </button>
+    <div class="dashboard-container">
+        <header class="top-bar">
+            <div class="logo-small">Banca<span> 360</span></div>
+        </header>
+        <main class="content">
+            <h2>Depósitos</h2>
+            <form id="form-depositos" autocomplete="off">
+                <div class="input-group">
+                    <label for="monto"></label>
+                    <input type="number" id="monto" placeholder="Monto a depositar" min="0.01" step="0.01" required>
+                </div>
+                <div class="input-group error-msg">
+                    <span id="resultado-msg"></span>
+                </div>
+                <div class="input-group" style="display:flex; gap:10px; flex-wrap:wrap;">
+                    <button id="limpiar-btn">Limpiar</button>
+                    <button id="depositar-btn">Depositar</button>
+                    <button id="regresar-btn" type="button">Regresar</button>
+                </div>
+            </form>
+        </main>
+    </div>
+    <script src="Scripts/Scriptdepositos.js"></script>
+    <script src="Scripts/script-modo.js"></script>
+</body>
+</html>

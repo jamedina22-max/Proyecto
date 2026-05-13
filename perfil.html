@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banca 360 | Mi Perfil</title>
+    <link rel="stylesheet" href="/Styles/stylesperfil.css">
+    <link rel="stylesheet" href="Styles/modo.css">
+</head>
+<body>
+    <button id="btn-modo">
+        <img src="Assets/modoclaro.png" alt="Modo">
+    </button>
+    <nav class="navbar">
+        <h2>Banca <span>360</span></h2>
+        <div class="nav-links">
+            <a href="Pantallainicial.html">Inicio</a>
+        </div>
+    </nav>
+    <main class="profile-container"> 
+        <div class="profile-box">
+            <div class="logo">
+                <h2>Mi <span>Perfil</span></h2>
+            </div>
+            <p class="welcome-text" id="profile-welcome">Gestiona tu información y seguridad bancaria.</p>
+
+            <!-- Sección de datos personales (Lectura y edición) -->
+            <section class="profile-info">
+                <h3>Datos personales</h3>
+                <form id="profile-form">
+                    <div class="input-group">
+                        <label for="fullname">Nombre Completo</label>
+                        <input type="text" id="fullname" disabled>
+                    </div>
+                    <div class="input-group">
+                        <label for="username">Usuario</label>
+                        <input type="text" id="username" disabled>
+                    </div>
+                    <div class="input-group">
+                        <label for="email-perfil">Correo Electrónico</label>
+                        <input type="email" id="email-perfil" placeholder="Ingresa tu correo" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="phone-perfil">Número de Teléfono</label>
+                        <input type="tel" id="phone-perfil" placeholder="Ingresa tu teléfono" required>
+                    </div>
+                    <button type="submit" class="register-btn">Actualizar información</button>
+                    <div id="profile-message" class="message"></div>
+                </form>
+            </section>
+
+            <!-- Modal de preguntas de seguridad para actualización de datos -->
+            <div id="seguridad-modal">
+                <div class="modal-content" id="seguridad-content">
+                    <!-- El contenido se llena dinámicamente -->
+                </div>
+            </div>
+
+            <hr>
+
+            <!-- Formulario de cambio de contraseña con validación de 6 números -->
+            <section class="security-section">
+                <h3>Seguridad</h3>
+                <form id="form-password">
+                    <div class="input-group">
+                        <label for="new-pass">Nueva Contraseña</label>
+                        <div class="password-container">
+                            <input type="password" id="new-pass" placeholder="••••••" required>
+                            <button id="toggle-new-pass" class="toggle-password-btn">
+                                <img id="icono-new-pass" src="Assets/ocultaroscuro.png" alt="Mostrar/Ocultar contraseña" class="icono-password" />
+                            </button>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label for="confirm-pass">Confirmar Contraseña</label>
+                        <div class="password-container">
+                            <input type="password" id="confirm-pass" placeholder="••••••" required>
+                            <button id="toggle-confirm-pass" class="toggle-password-btn">
+                                <img id="icono-confirm-pass" src="Assets/ocultaroscuro.png" alt="Mostrar/Ocultar contraseña" class="icono-password" />
+                            </button>
+                        </div>
+                    </div>
+                    <button type="submit" class="register-btn">Actualizar Contraseña</button>
+                    <div id="password-message" class="message"></div>
+                </form>
+            </section> 
+
+            <hr>
+
+            <!-- Botón de cierre de sesión seguro -->
+            <button id="logout-btn" class="logout-btn">
+                Cerrar Sesión Segura
+            </button>
+        </div>
+    </main>
+
+    <script src="/Scripts/Scriptperfil.js"></script>
+    <script src="Scripts/script-modo.js"></script>
+    
+</body>
+</html>

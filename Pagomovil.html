@@ -1,0 +1,68 @@
+<html></html><!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pago Movil | Banca 360</title>
+    <link rel="stylesheet" href="Styles/pagomovil.css">
+    <link rel="stylesheet" href="Styles/modo.css">
+</head>
+<body>
+    <button id="btn-modo">
+        <img src="Assets/modoclaro.png" alt="Modo">
+    </button>
+    <div class="dashboard-container">
+        <header class="top-bar">
+            <div class="logo-small">Banca<span> 360</span></div>
+        </header>
+        <main class="content">
+            <h2>Pago Movil</h2>
+            <form id="form-pagomovil" autocomplete="off">
+                <div class="input-group">
+                    <label for="banco"></label>
+                    <select id="banco" required>
+                        <option value="">Seleccione un banco</option>
+                        <option value="Mercantil">Mercantil</option>
+                        <option value="Banesco">Banesco</option>
+                        <option value="Banco de Venezuela">Banco de Venezuela</option>
+                        <option value="Bancaribe">Bancaribe</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="numero"></label>
+                    <input type="number" id="numero" placeholder="Número de Teléfono: " min="1" required>
+                </div>
+                
+                <div class="input-group input-flex-center-gap">
+                    <label for="tipo"></label>
+                    <select id="tipo" required>
+                        <option value="PERSONA">PERSONA</option>
+                        <option value="COMERCIO">COMERCIO</option>
+                        <option value="COMUNAS">COMUNAS</option>
+                    </select>
+                    <label for="documento" class="ml-10"></label>
+                    <input type="number" id="documento" placeholder="Documento:" min="01">
+                </div>
+                <div class="input-group">
+                    <label for="monto"></label>
+                    <input type="number" id="monto" placeholder="Monto:" min="0.01" step="0.01" required>
+                </div>
+                <div class="input-group">
+                    <label for="concepto"></label>
+                    <input type="text" id="concepto" placeholder="Concepto:" required>
+                </div>
+                <div class="input-group error-msg">
+                    <span id="saldo-error"></span>
+                </div>
+                <div class="input-group input-flex-gap">
+                    <button id="limpiar-btn">Limpiar</button>
+                    <button id="transferir-btn">Transferir</button>
+                    <button id="regresar-btn" type="button">Regresar</button>
+                </div>
+            </form>
+        </main>
+    </div>
+    <script src="/Scripts/Scriptpagomovil.js"></script>
+    <script src="Scripts/script-modo.js"></script>
+</body>
+</html>

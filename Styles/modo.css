@@ -1,0 +1,25 @@
+/* Estilos para el botón de modo claro/oscuro */
+#btn-modo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: white;
+    border: none;
+    padding: 5px;
+    z-index: 1000;
+    width: 55px;
+    height: 55px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    box-sizing: border-box;
+}
+
+body,
+body * {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+body {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}

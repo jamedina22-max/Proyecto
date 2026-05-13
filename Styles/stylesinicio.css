@@ -1,0 +1,260 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #5c16a2, #1538b6, #9016e7);
+    background-attachment: fixed;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+}
+
+.dark-mode{
+    background: linear-gradient(135deg, #525252, #5b5b5b, #525050);
+    .login-box{
+        background: #3b3b3b;
+    }
+    .logo h2 {
+        color: #fefefe;
+    }
+    .logo span {
+        color: #815497;
+    }
+    .welcome-text {
+        color: #f1f1f1;
+    }
+    .input-group label {
+        color: #f1f1f1;
+    }
+    .security-notice {
+        border-left: 4px solid #5b036a;
+    }
+    #recuperacion-modal .modal-content {
+        background: #3b3b3b;
+        color: #f1f1f1;
+    }
+    
+}
+
+.login-box {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.logo h2 {
+    color: #3b15a3;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.logo span {
+    color: #1342cf;
+    font-weight: bold;
+}
+
+.welcome-text {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 30px;
+}
+
+.input-group {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.input-group input:focus {
+    border-color: #1a2a6c;
+}
+
+.options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    margin-bottom: 25px;
+    color: #555;
+}
+
+.forgot-link {
+    color: #231aa5;
+    text-decoration: none;
+}
+
+.forgot-link:hover {
+    text-decoration: underline;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 14px;
+    background-color: #640bd7;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.login-btn:hover {
+    background-color: #681594;
+}
+
+.security-notice {
+    margin-top: 25px;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 6px;
+    border-left: 4px solid #fdbb2d;
+    font-size: 0.75rem;
+    color: #777;
+    text-align: left;
+}
+
+/* Modal de recuperación de cuenta */
+#recuperacion-modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(0,0,0,0.4);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+#recuperacion-modal.activo {
+    display: flex;
+}
+
+#recuperacion-modal .modal-content {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    width: 350px;
+    margin: auto;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+#recuperacion-modal h3 {
+    margin-bottom: 18px;
+    color: #3b15a3;
+}
+
+#recuperacion-modal input[type="text"],
+#recuperacion-modal input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+#recuperacion-modal button {
+    width: 100%;
+    padding: 10px;
+    background-color: #640bd7;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 8px;
+    transition: background 0.3s;
+}
+
+#recuperacion-modal button:hover {
+    background-color: #681594;
+}
+
+/* Contenedor para contraseñas con toggle */
+.password-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.toggle-password-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.icono-password {
+    width: 24px;
+    height: 24px;
+}
+
+#recuperacion-modal .cancelar-btn {
+    background: #ccc;
+    color: #333;
+}
+
+#mensaje-error {
+    color: red;
+    display: none;
+    margin-top: 8px;
+}
+
+/* Spinner de carga */
+#spinner-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(255,255,255,0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+}
+.spinner {
+    border: 6px solid #eee;
+    border-top: 6px solid #640bd7;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    animation: spin 1s linear infinite;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg);}
+    100% { transform: rotate(360deg);}
+}
