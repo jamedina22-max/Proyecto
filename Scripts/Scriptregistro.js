@@ -104,6 +104,6 @@ document.addEventListener('DOMContentLoaded', function() {
         // Guardar en localStorage (por username)
         localStorage.setItem('user_' + userData.username, JSON.stringify(userData));
         // Redirigir a Iniciosesion.html
-        window.location.href = 'Iniciosesion.html';
+        window.location.href = 'index.html';
     });
 });
