@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Regresar
     regresarBtn.onclick = function(e) {
         e.preventDefault();
-        window.location.href = 'Pantallainicial.html';
+        window.location.href = './Pantallainicial.html';
     };
 });
 
